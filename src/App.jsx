@@ -5,6 +5,7 @@ import UserInput from "./components/Input";
 function App() {
   return (
     <>
+      <h1>Real time Text Analyzer</h1>
       <UserInput />
     </>
   );

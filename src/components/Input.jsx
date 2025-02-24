@@ -1,26 +1,27 @@
-//import useState from "react";
 import { useState } from "react";
+import { wordCounter } from "./TextAnalyzer";
 
 function UserInput() {
-  const [text, setText] = useState("");
+  let [text, setText] = useState("");
+  let [numWords, setNumWords] = useState(0);
 
-  function handleTextArea(value) {
-    setText(value);
+  function handleTextChange(event) {
+    let newText = event.target.value;
+    setText(newText);
+    setNumWords(wordCounter(newText));
   }
 
   return (
     <>
+      <p>Word count: {numWords}</p>
       <textarea
         name="postContent"
         rows={10}
         cols={80}
         placeholder="write you text here!"
         value={text}
-        onChange={(event) => {
-          handleTextArea(event.target.value);
-        }}
+        onChange={handleTextChange}
       />
-      <p>{text}</p>
     </>
   );
 }
