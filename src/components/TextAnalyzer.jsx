@@ -18,3 +18,14 @@ export const filteredCharacterCounter = (text) => {
 export const numberCounter = (text) => {
   return text.split("").filter((character) => /\d/.test(character)).length;
 };
+
+export const getSum = (text) => {
+  const stringNumbers = text.split("").filter((character) => {
+    return /\d/.test(character);
+  });
+  let numbers = stringNumbers.map((stringNumber) => {
+    return parseInt(stringNumber);
+  });
+  let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  return sum;
+};

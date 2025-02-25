@@ -4,6 +4,7 @@ import {
   characterCounter,
   filteredCharacterCounter,
   numberCounter,
+  getSum,
 } from "./TextAnalyzer";
 
 function UserInput() {
@@ -12,6 +13,7 @@ function UserInput() {
   let [numcharacteres, setNumcharacteres] = useState(0);
   let [alphaNumericCount, setAlphaNumericCount] = useState(0);
   let [numberCount, setNumberCount] = useState(0);
+  let [sum, setSum] = useState(0);
 
   function handleTextChange(event) {
     let newText = event.target.value;
@@ -20,6 +22,7 @@ function UserInput() {
     setNumcharacteres(characterCounter(newText));
     setAlphaNumericCount(filteredCharacterCounter(newText));
     setNumberCount(numberCounter(newText));
+    setSum(getSum(newText));
   }
 
   return (
@@ -31,7 +34,7 @@ function UserInput() {
         {alphaNumericCount}
       </p>
       <p>Number count: {numberCount}</p>
-
+      <p>Sum: {sum}</p>
       <textarea
         name="postContent"
         rows={10}
