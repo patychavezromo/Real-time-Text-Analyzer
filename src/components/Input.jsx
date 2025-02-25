@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { wordCounter } from "./TextAnalyzer";
+import { wordCounter, characterCounter } from "./TextAnalyzer";
 
 function UserInput() {
   let [text, setText] = useState("");
   let [numWords, setNumWords] = useState(0);
+  let [numcharacteres, setNumcharacteres] = useState(0);
 
   function handleTextChange(event) {
     let newText = event.target.value;
     setText(newText);
     setNumWords(wordCounter(newText));
+    setNumcharacteres(characterCounter(newText));
   }
 
   return (
     <>
       <p>Word count: {numWords}</p>
+      <p>characters: {numcharacteres}</p>
       <textarea
         name="postContent"
         rows={10}
