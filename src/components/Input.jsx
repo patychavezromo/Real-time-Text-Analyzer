@@ -3,6 +3,7 @@ import {
   wordCounter,
   characterCounter,
   filteredCharacterCounter,
+  numberCounter,
 } from "./TextAnalyzer";
 
 function UserInput() {
@@ -10,6 +11,7 @@ function UserInput() {
   let [numWords, setNumWords] = useState(0);
   let [numcharacteres, setNumcharacteres] = useState(0);
   let [alphaNumericCount, setAlphaNumericCount] = useState(0);
+  let [numberCount, setNumberCount] = useState(0);
 
   function handleTextChange(event) {
     let newText = event.target.value;
@@ -17,6 +19,7 @@ function UserInput() {
     setNumWords(wordCounter(newText));
     setNumcharacteres(characterCounter(newText));
     setAlphaNumericCount(filteredCharacterCounter(newText));
+    setNumberCount(numberCounter(newText));
   }
 
   return (
@@ -27,6 +30,7 @@ function UserInput() {
         Character count excluding spaces and special characters:{" "}
         {alphaNumericCount}
       </p>
+      <p>Number count: {numberCount}</p>
 
       <textarea
         name="postContent"

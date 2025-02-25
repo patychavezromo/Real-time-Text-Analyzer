@@ -14,3 +14,7 @@ export const filteredCharacterCounter = (text) => {
     return /^[a-zA-Z0-9]$/.test(character);
   }).length;
 };
+
+export const numberCounter = (text) => {
+  return text.split("").filter((character) => /\d/.test(character)).length;
+};
