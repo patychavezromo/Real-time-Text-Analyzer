@@ -8,3 +8,9 @@ export const wordCounter = (text) => {
 export const characterCounter = (text) => {
   return text.length > 0 ? text.length : 0;
 };
+
+export const filteredCharacterCounter = (text) => {
+  return text.split("").filter((character) => {
+    return /^[a-zA-Z0-9]$/.test(character);
+  }).length;
+};
