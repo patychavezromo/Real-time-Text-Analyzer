@@ -5,6 +5,7 @@ import {
   filteredCharacterCounter,
   numberCounter,
   getSum,
+  getAverageWordLength,
 } from "./TextAnalyzer";
 
 function UserInput() {
@@ -14,6 +15,7 @@ function UserInput() {
   let [alphaNumericCount, setAlphaNumericCount] = useState(0);
   let [numberCount, setNumberCount] = useState(0);
   let [sum, setSum] = useState(0);
+  let [averageWordLength, setAverageWordLength] = useState(0);
 
   function handleTextChange(event) {
     let newText = event.target.value;
@@ -23,6 +25,7 @@ function UserInput() {
     setAlphaNumericCount(filteredCharacterCounter(newText));
     setNumberCount(numberCounter(newText));
     setSum(getSum(newText));
+    setAverageWordLength(getAverageWordLength(newText));
   }
 
   return (
@@ -35,11 +38,12 @@ function UserInput() {
       </p>
       <p>Number count: {numberCount}</p>
       <p>Sum: {sum}</p>
+      <p>average Word Length: {averageWordLength}</p>
       <textarea
         name="postContent"
         rows={10}
         cols={80}
-        placeholder="write you text here!"
+        placeholder="write your text here!"
         value={text}
         onChange={handleTextChange}
       />

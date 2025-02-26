@@ -29,3 +29,10 @@ export const getSum = (text) => {
   let sum = numbers.reduce((acc, curr) => acc + curr, 0);
   return sum;
 };
+
+export const getAverageWordLength = (text) => {
+  let totalCharacters = filteredCharacterCounter(text);
+  let totalWords = wordCounter(text);
+  if (totalWords === 0) return 0;
+  return totalCharacters / totalWords;
+};
