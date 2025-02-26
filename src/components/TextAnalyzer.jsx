@@ -31,8 +31,7 @@ export const getSum = (text) => {
 };
 
 export const getAverageWordLength = (text) => {
-  let totalCharacters = filteredCharacterCounter(text);
+  let totalCharactersWithoutSpaces = text.replace(/\s/g, "").length;
   let totalWords = wordCounter(text);
-  if (totalWords === 0) return 0;
-  return totalCharacters / totalWords;
+  return totalWords === 0 ? 0 : totalCharactersWithoutSpaces / totalWords;
 };
