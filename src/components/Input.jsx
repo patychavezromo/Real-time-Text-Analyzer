@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./Metrics.module.css"; // Importa el archivo de estilos
 import {
   wordCounter,
   characterCounter,
@@ -30,15 +31,20 @@ function UserInput() {
 
   return (
     <>
-      <p>Word count: {numWords}</p>
-      <p>characters count: {numcharacteres}</p>
-      <p>
-        Character count excluding spaces and special characters:{" "}
-        {alphaNumericCount}
-      </p>
-      <p>Number count: {numberCount}</p>
-      <p>Sum: {sum}</p>
-      <p>average Word Length: {averageWordLength}</p>
+      <div className={styles.metricsContainer}>
+        <p className={styles.metric}>Word count: {numWords}</p>
+        <p className={styles.metric}>characters count: {numcharacteres}</p>
+        <p className={styles.metric}>
+          Character count excluding spaces and special characters:{" "}
+          {alphaNumericCount}
+        </p>
+        <p className={styles.metric}>Number count: {numberCount}</p>
+        <p className={styles.metric}>Sum: {sum}</p>
+        <p className={styles.metric}>
+          average Word Length: {averageWordLength}
+        </p>
+      </div>
+
       <textarea
         name="postContent"
         rows={10}

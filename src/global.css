@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*incluye el tamano del padding y border al total del ancho y alto del elemento*/
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /*Define la fuente principal para todo el documento; probando en orden*/
+  line-height: 1.5; /*Define el espaciado entre líneas de texto para mejorar la legibilidad.*/
+  font-weight: 400; /*Define el grosor del texto (400 es normal, 700 es negrita).*/
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87); /*Define el color de texto por defecto.*/
+  background-color: #242424; /*Define el color de fondo de la página (#242424 es un tono oscuro).*/
+
+  font-synthesis: none; /*Evita que los navegadores generen automáticamente fuentes en negrita o cursiva si una fuente no las incluye.*/
+  text-rendering: optimizeLegibility; /*Mejora la visualización del texto optimizando el kerning (espaciado entre letras) y los ligaduras tipográficas.*/
+  -webkit-font-smoothing: antialiased; /*Hace que el texto se vea más nítido en navegadores basados en WebKit (Chrome, Safari).*/
+  -moz-osx-font-smoothing: grayscale; /*Mejora la apariencia de la fuente en macOS aplicando antialiasing en escala de grises.  */
+
+  --primary-color: #1e40af; /* Azul */
+  --secondary-color: #9333ea; /* Morado */
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  /*--font-family: "Inter", sans-serif;*/
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  /*color: var(--primary-color);*/
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+  /*  color: var(--secondary-color);*/
+}
+
+body {
+  margin: 0; /*Elimina el margen por defecto que los navegadores suelen aplicar al elemento <body>. */
+  display: flex; /*Define que el contenedor del <body> será un contenedor flexible (Flexbox).
+  Esto significa que sus elementos hijos (por ejemplo, otros elementos HTML dentro de <body>) se alinearán de acuerdo a las reglas del modelo de Flexbox.*/
+  /*place-items: center; En resumen, esta propiedad asegura que cualquier elemento dentro del <body> (que sea un contenedor flex) se centrará tanto vertical como horizontalmente.*/
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-width: 320px; /*Establece un ancho mínimo para el <body>.*/
+  min-height: 100vh; /*Establece una altura mínima para el <body>.*/
+
+  /* font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6; */
+}
+
+h1 {
+  font-size: 3.2em; /*3.2em significa que el tamaño de la fuente será 3.2 veces el tamaño de la fuente del elemento contenedor (o el tamaño de la fuente heredado */
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

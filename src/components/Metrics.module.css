@@ -1,0 +1,20 @@
+.metricsContainer {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias líneas si es necesario */
+  justify-content: center; /* Centra los elementos en el eje horizontal */
+  gap: 16px; /* Espaciado entre métricas */
+  max-width: 600px; /* Limita el ancho para que las métricas no se expandan demasiado */
+  margin: 0 auto; /* Centra el contenedor en el body */
+  padding: 20px;
+}
+
+.metric {
+  flex: 1 1 calc(50% - 16px); /* Cada métrica ocupa el 50% del ancho menos el espacio del gap */
+  background-color: #f8f9fa; /* Color de fondo */
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center; /* Centra el texto dentro de cada métrica */
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+}
