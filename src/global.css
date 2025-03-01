@@ -55,6 +55,9 @@ body {
 h1 {
   font-size: 3.2em; /*3.2em significa que el tamaño de la fuente será 3.2 veces el tamaño de la fuente del elemento contenedor (o el tamaño de la fuente heredado */
   line-height: 1.1;
+  text-align: center;
+  margin: auto;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 button {
